@@ -1,0 +1,29 @@
+Algoritmos e estruturas de dados
+
+Elabore uma solução
+tecnológica que calcule as lojas mais próximas para o cliente retirar seu produto.
+Considerando um plano X,Y de tamanho MxN, em que o usuário estará numa
+determinada coordenada e as lojas em outras coordenadas, crie um algoritmo
+que seja capaz de ordenar as lojas pela menor distância e trazer as 3 lojas mais
+próximas.
+
+Como entradas do algoritmo, considere os seguintes parâmetros:
+
+posicaoDoCliente = [X,Y], onde a entrada é um vetor de inteiros;
+lojas = [[X,Y]...[Xn, Yn]], onde a entrada é uma matriz 2xN de inteiros;
+plano = [M,N], onde a entrada é um vetor de inteiros.
+0 ≤ X ≤ M
+0 ≤ Y ≤ N
+0 ≤ M ≤ 1000
+0 ≤ N ≤ 1000
+
+Exemplo:
+posicaoCliente = [20, 32],
+lojas = [[ 40,88 ], [ 18, 56 ], [ 99, 2 ]]
+plano = [100,100]
+Resultado esperado:
+[[18,56],[40,88],[99,2]]
+Considere a seguinte equação como fórmula para cálculo da distância entre o
+cliente e as lojas:
+
+Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)); //java
