@@ -9,29 +9,32 @@ public class ShortestDistance{
 
     private int[] posicaoCliente;
     private int[][] lojas;
+    private int[] plano;
 
+    
+    
 	public int[] getPosicaoCliente() {
-		return this.posicaoCliente;
+        return this.posicaoCliente;
 	}
-
+    
 	public void setPosicaoCliente(int[] posicaoCliente) {
-		this.posicaoCliente = posicaoCliente;
+        this.posicaoCliente = posicaoCliente;
 	}
-
+    
 	public int[][] getLojas() {
-		return this.lojas;
+        return this.lojas;
 	}
-
+    
 	public void setLojas(int[][] lojas) {
-		this.lojas = lojas;
+        this.lojas = lojas;
 	}
-
-        
-            
-
-        
-        
-
-  
-
+    
+    public int[] getPlano() {
+        return this.plano;
+    }
+    
+    public void setPlano(int[] plano) {
+        this.plano = plano;
+    }
+    
 }
