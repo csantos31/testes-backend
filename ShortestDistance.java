@@ -10,9 +10,8 @@ public class ShortestDistance{
     private int[] posicaoCliente;
     private int[][] lojas;
     private int[] plano;
+    private double[] vetorDistancia;
 
-    
-    
 	public int[] getPosicaoCliente() {
         return this.posicaoCliente;
 	}
@@ -36,5 +35,12 @@ public class ShortestDistance{
     public void setPlano(int[] plano) {
         this.plano = plano;
     }
-    
+ 
+    public double[] getVetorDistancia() {
+		return this.vetorDistancia;
+	}
+
+	public void setVetorDistancia(double[] vetorDistancia) {
+		this.vetorDistancia = vetorDistancia;
+	}
 }
