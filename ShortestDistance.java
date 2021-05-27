@@ -1,32 +1,30 @@
 public class ShortestDistance{
     //posicaoDoCliente = [X,Y]
     //lojas = [[X,Y]...[Xn, Yn]]
-    
     //plano = [M,N] MAIOR QUE 0 e MENOR QUE 1000
-    
     //M maior que X
     //N maior que Y
 
     private int[] posicaoCliente;
     private int[][] lojas;
     private int[] plano;
-    private double[] vetorDistancia;
+    private double[][] vetorDistancia;
 
-	public int[] getPosicaoCliente() {
-        return this.posicaoCliente;
-	}
+    public int[] getPosicaoCliente() {
+        return this.posicaoCliente;	
+    }
     
-	public void setPosicaoCliente(int[] posicaoCliente) {
+    public void setPosicaoCliente(int[] posicaoCliente) {
         this.posicaoCliente = posicaoCliente;
-	}
+    }
     
-	public int[][] getLojas() {
+    public int[][] getLojas() {
         return this.lojas;
-	}
+    }
     
-	public void setLojas(int[][] lojas) {
+    public void setLojas(int[][] lojas) {
         this.lojas = lojas;
-	}
+    }
     
     public int[] getPlano() {
         return this.plano;
@@ -36,11 +34,11 @@ public class ShortestDistance{
         this.plano = plano;
     }
  
-    public double[] getVetorDistancia() {
-		return this.vetorDistancia;
-	}
+    public double[][] getVetorDistancia() {
+        return this.vetorDistancia;
+    }
 
-	public void setVetorDistancia(double[] vetorDistancia) {
-		this.vetorDistancia = vetorDistancia;
-	}
+    public void setVetorDistancia(double[][] vetorDistancia) {
+        this.vetorDistancia = vetorDistancia;
+    }
 }

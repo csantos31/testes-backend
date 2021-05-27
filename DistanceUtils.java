@@ -8,7 +8,7 @@ public class DistanceUtils{
     private int[] posicaoAux = new int[2];
     private String[][] posicaoLojas = null;
     private int[][] lojasAux = new int[10][2];
-    private double[] vetorDistancia = new double[10];
+    private double[][] vetorDistancia = new double[10][2];
 
     public ShortestDistance getShortestDistance(){
         for(int x=0;x<this.lojasAux.length;x++){
@@ -28,7 +28,7 @@ public class DistanceUtils{
         this.calculaDistancias();
 
         //ORDENACAO DO VETOR
-        this.quickSort(vetorDistancia,0,this.vetorDistancia.length-1);
+        this.quickSort(this.vetorDistancia,0,9);
 
         return this.shortestDistance;
     }
@@ -46,7 +46,7 @@ public class DistanceUtils{
 
     private void defineLojas(){
         this.strAux = JOptionPane
-        .showInputDialog("Digite os pontos X e Y das lojas separadas por espaço\nExemplo: 2,7 11,11 9,7 Xn,Yn")
+        .showInputDialog("Digite os pontos X e Y das lojas separadas por espaço (Maximo 10 valores)\nExemplo: 2,7 11,11 9,7 Xn,Yn")
         .split("\\s+");
         
         for(int i=0; i<this.strAux.length; i++){
@@ -80,7 +80,8 @@ public class DistanceUtils{
         for(int i=0; i<this.shortestDistance.getLojas().length; i++){
             int x2=this.shortestDistance.getLojas()[i][0];
             int y2=this.shortestDistance.getLojas()[i][1];
-            vetorDistancia[i] = Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1)); 
+            vetorDistancia[i][0] = Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1)); 
+            vetorDistancia[i][1] = i; 
             if(this.shortestDistance.getLojas()[i+1][0]==-1){
                 i = this.shortestDistance.getLojas().length;
             }
@@ -105,27 +106,33 @@ public class DistanceUtils{
     }
 
     //ALGORITMOS DE ORDENACAO
-    public int partition(double A[], int p, int r){
+    public int partition(double A[][], int p, int r){
         int i, j;
-        double x=A[r];
+        double x=A[r][0];
         i=p-1;
 
         for(j=p;j<r;j++){
-            if(A[j]<x){
+            if(A[j][0]<x){
                 i=i+1;
-                double aux = A[i];
-                A[i]=A[j];
-                A[j]=aux;
+                double aux = A[i][0];
+                double auxY = A[i][1];
+                A[i][0]=A[j][0];
+                A[i][1]=A[j][1];
+                A[j][0]=aux;
+                A[j][1]=auxY;
             }
         }
         i=i+1;
-        double aux=A[i]; 
-        A[i]=A[r];    
-        A[r]=aux;
+        double aux=A[i][0]; 
+        double auxY=A[i][1]; 
+        A[i][0]=A[r][0];    
+        A[i][1]=A[r][1];    
+        A[r][0]=aux;
+        A[r][1]=auxY;
         return i;
     }
 
-    public void quickSort(double A[], int p, int r){
+    public void quickSort(double A[][], int p, int r){
         if(p<r){
             int q = partition(A,p,r);
             quickSort(A,p,q-1);
