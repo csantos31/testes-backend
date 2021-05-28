@@ -14,5 +14,5 @@ Teste de lógica
 <br>X e Y separados por virgulas, e ítens separados por espaço<br>
 ![Teste teorico](https://github.com/csantos31/testes-backend/blob/main/passo2.png?raw=true)
 
-<br>Para finalizar, preencha informando os valores x e y referentes ao plano
+<br>Para finalizar, preencha informando os valores x e y referentes ao plano<br>
 ![Teste teorico](https://github.com/csantos31/testes-backend/blob/main/passo3.png?raw=true)
