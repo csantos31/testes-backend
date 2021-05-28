@@ -126,7 +126,7 @@ public class DistanceUtils{
         double aux=A[i][0]; 
         double auxY=A[i][1]; 
         A[i][0]=A[r][0];    
-        A[i][1]=A[r][1];    
+        A[i][1]=A[r][1];
         A[r][0]=aux;
         A[r][1]=auxY;
         return i;
