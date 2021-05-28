@@ -10,8 +10,10 @@ public class ShortestDistanceTest{
 
                 //Aqui temos os resultados calculados de distancia de acordo com o que o usuario informou 
                 //Na coluna seguinte temos o index da tabela inicial, com as informações dos pontos que o usuario informou
-                System.out.println("Distancia: "+String.format("%.2f", shortestDistance.getVetorDistancia()[i][0])
-                + " " + index);
+                System.out.println("\n\n\tPara as coordenadas "+shortestDistance.getLojas()[j][0]+","+shortestDistance.getLojas()[j][1]);
+
+                System.out.println("\n\tDistancia: "+String.format("%.2f", shortestDistance.getVetorDistancia()[i][0]));
+
             }
         }
     }
